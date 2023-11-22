@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmation Page</title>
+</head>
+<body>
+    <h1>Confirmation Page</h1>
+    <p>Thank you for submitting the form. Your details:</p>
+    <ul>
+        <li>First Name: <span id="first_name"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+  
+        <li>Last Name: <span id="last_name"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+
+        <li>Mobile Number: <span id="mobile_number"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+
+        <li>Email: <span id="email"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+
+        <li>Address: <span id="address"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+
+        <li>State: <span id="state"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+
+        <li>Gender: <span id="gender"></span></li>
+        <div style="margin-bottom: 10px;"></div>
+        <button id="goBack
+" onclick="" onmouseout="goBack()">Click to fill again</button>
+    </ul>
+
+    <script>
+        // Retrieve query parameters from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        function goBack() {
+            window.history.back();
+        }
+
+        // Update the content on the page with the collected data
+        document.getElementById("first_name").textContent = urlParams.get("first_name");
+        document.getElementById("last_name").textContent = urlParams.get("last_name");
+        document.getElementById("mobile_number").textContent = urlParams.get("mobile_number");
+        document.getElementById("email").textContent = urlParams.get("email");
+        document.getElementById("address").textContent = urlParams.get("address");
+        document.getElementById("state").textContent = urlParams.get("state");
+        document.getElementById("gender").textContent = urlParams.get("gender");
+        
+    </script>
+</body>
+</html>

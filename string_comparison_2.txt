@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<script>
+
+
+    function compLocale() {
+        var input1 = document.getElementById("str1").value;
+        var input2 = document.getElementById("str2").value;
+        var compValue = input1.localeCompare(input2);
+        var output1;
+
+        if (compValue == 0) {
+            output1 = "Both Stings Are Equal";
+        }
+        else {
+            output1 = "Both Strings Are Unequal";
+        }
+        document.getElementById("output1").innerHTML = output1;
+    }
+
+    function compuser() {
+        var input1 = document.getElementById("str1").value;
+        var input2 = document.getElementById("str2").value;
+        var output5;
+        output5 = "Both Strings Are Equal";
+        if (input1.length != input2.length) {
+            output5 = "Both Strings Are Unequal";
+        } else {
+            for (let i = 0; i < input1.length; i++) {
+                if (input1[i] != input2[i]) {
+                    output5 = "Both Strings Are Unequal";
+                    break;
+                }
+            }
+        }
+
+        document.getElementById("output5").innerHTML = output5;
+    }
+
+    function compEqEq() {
+        var input1 = document.getElementById("str1").value;
+        var input2 = document.getElementById("str2").value;
+        var l31 = input1.length;
+        var l32 = input2.length;
+        var output31;
+        var output32;
+        if (l31 == l32) {
+            output31 = "Both Strings Of Same Length";
+            if (input1 == input2) {
+                output32 = "Both Strings Are Equal";
+            }
+            else {
+                output32 = "Both Strings Are Unequal";
+            }
+        }
+        else {
+            output31 = "Both Strings Are Of Unequal Length";
+            output32 = " ";
+        }
+        document.getElementById("output2").innerHTML = output31;
+        document.getElementById("output3").innerHTML = output32;
+    }
+
+    function compEqEqEq() {
+        var input1 = document.getElementById("str1").value;
+        var input2 = document.getElementById("str2").value;
+        var output4;
+        if (input1 === input2) {
+            output4 = "Both Stings Are Equal";
+        }
+        else {
+            output4 = "Both Strings Are Unequal";
+        }
+        document.getElementById("output4").innerHTML = output4;
+    }
+
+
+</script>
+
+<center>
+    <h1>String Comparison </h1>
+</center>
+
+<body>
+    <center>
+        <h2>Swaraj Telkhade</h2>
+        <h3>Roll No.: 42368</h3>
+        Enter First String : <input type="string" id="str1"></inputtype>
+        <br><br>
+        Enter Second String : <input type="string" id="str2"></inputtype>
+        <br><br>
+        <hr>
+        <h3>User Defined</h3>
+        <button onclick="compuser()">Compare Using (user defined function)</button>
+        <p id="output5"></p>
+        <hr>
+        <h3>Using LocaleCompare</h3>
+        <button onclick="compLocale()">Compare Using (Locale Compare)</button>
+        <p id="output1"></p>
+        <hr>
+
+        <h3> Using Length & == Operator</h3>
+        <button onclick="compEqEq()">Compare (Using ==)</button>
+        <p id="output2"></p>
+        <p id="output3"></p>
+        <hr>
+
+        <h3> Using === Operator</h3>
+        <button onclick="compEqEqEq()">Compare (Using ===)</button>
+        <p id="output4"></p>
+        <hr>
+    </center>
+
+</body>
+
+</html>
